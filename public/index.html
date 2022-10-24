@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <meta property="og:url" content="https://rowma.github.io/public-console/" />
+    <meta property="og:title" content="Rowma Public Console" />
+    <meta property="og:description" content="This is a console implementation developed by using Rowma JavaScript SDK." />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@rowmaio" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Robot Navigation on the Map</title>
+  </head>
+  
+  <body>
+	<p>地図上で経路を指定してください</p><!-- 本文 -->
+
+	<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+	<div class="wrap clearfix">
+		<div class="box box3" id="reset-button"><p id="r_button">線を全て消去</p></div>
+		<div id="popup_wrapper"><p id="popup"></p></div>
+		<style>
+		#reset-button {
+			display: block;
+			cursor: pointer;
+			width: 40vmin;
+      position:relative;
+      left: 47%;
+			text-align: center;
+			border: 1px solid #F05F8D;
+		}
+		#reset-button:hover{
+			color: #ffffff;
+			background: #F05F8D;
+		}
+		</style>
+	</div>
+	<div class="flex">
+		<div id="root" class="left"></div>
+		<div id="map" class="right"></div>
+	</div>
+
+	<style>
+	#map {
+		width: 100%;
+		height: 90vh;
+		background-color: grey;
+	}
+	</style>
+
+	<script src="https://public-console-plus-mapapp.s3.ap-northeast-1.amazonaws.com/public/latlon.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8Q9TXD6Qij7Y-Vji6p2KU8Qu8Aeb0W28&callback=initMap&libraries=drawing"></script>
+	
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
